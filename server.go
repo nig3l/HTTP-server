@@ -29,10 +29,10 @@ func pathHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
-    })
 
+    http.HandleFunc("/", logRequest(homeHandler))
+    http.HandleFunc("/path/", logRequest(pathHandler))
+    
     log.Println("Starting server on :8080")
     err := http.ListenAndServe(":8080", nil)
     if err != nil {
