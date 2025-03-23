@@ -56,7 +56,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
         </head>
         <body>
             <div class="container">
-                <h1>Welcome to Our Cool HTTP Server!</h1>
+                <h1>Welcome to My Cool HTTP Server!</h1>
                 <p>This is a simple but modern-looking interface for our server.</p>
                 <button class="button" onclick="window.location.href='/path/test'">Try Path Handler</button>
             </div>
